@@ -11,7 +11,7 @@ if [ "$#" -lt "1" ]; then
     usage
 fi
 
-gradle clean assemble
+./gradlew clean assemble
 LIB_JARS=`find -H lib -name "*.jar" | tr "\n" ":"`
 
 java -cp $LIB_JARS:build/classes/java/main com.govtech.pic.suggest.Suggester $1
